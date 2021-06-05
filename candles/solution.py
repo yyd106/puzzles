@@ -12,7 +12,7 @@ The List 'candies' represent the List of the candle lengths.
 You can input different sequences to test
 """
 
-candies = test_candies_1
+candies = test_candies_3
 candies_number = len(candies)
 
 """
@@ -51,8 +51,18 @@ def solution(col, row, turn):
     else:
         return 0
 
+
+total_length = sum(candies)
+d_value = solution(0, candies_number - 1, 'a')
+
+# The final_length is the best length
+final_length = (total_length - d_value)/2 + d_value
+
 print("The maximum lenth difference is:")
 print(solution(0, candies_number - 1, 'a'))
 
-print("\n\nThe state matrix is:")
+print("\nThe state matrix is:")
 print(each_situation)
+
+print("\nThe best length is:")
+print(final_length)
